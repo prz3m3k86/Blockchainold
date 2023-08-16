@@ -10,7 +10,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Otwarcie portu
-EXPOSE 5001
+EXPOSE 8081
 
 # Uruchomienie aplikacji
 CMD ["python", "blockchain_client.py"]
