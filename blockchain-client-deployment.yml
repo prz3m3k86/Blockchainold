@@ -13,8 +13,11 @@ spec:
         app: blockchain-client
     spec:
       containers:
-      - name: blockchain-client
-        image: localhost:8081/blockchain-client
-        imagePullPolicy: Never
+      - name: Przemek
+        image: localhost:8081/Przemek
         ports:
         - containerPort: 8081
+      - name: WSEI
+        image: localhost:8082/WSEI
+        ports:
+        - containerPort: 8082
