@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: blockchain
-        image: localhost:5000/blockchain
+        image: localhost:5001/blockchain
         imagePullPolicy: Never
         ports:
         - containerPort: 5001
