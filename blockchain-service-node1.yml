@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blockchain-service-node1
+spec:
+  selector:
+    app: blockchain-node1
+  ports:
+    - protocol: TCP
+      port: 5001  # Port zewnętrzny, który będziesz używać do dostępu z przeglądarki
+      targetPort: 5001  # Numer portu kontenera
+  type: LoadBalancer

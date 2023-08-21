@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockchain-node1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blockchain-node1
+  template:
+    metadata:
+      labels:
+        app: blockchain-node1
+    spec:
+      containers:
+      - name: blockchain
+        image: localhost:5000/blockchain
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5001  # Port, na którym działa aplikacja wewnątrz kontenera

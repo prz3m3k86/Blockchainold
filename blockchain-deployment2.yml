@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockchain
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blockchain
+  template:
+    metadata:
+      labels:
+        app: blockchain
+    spec:
+      containers:
+      - name: blockchain2
+        image: localhost:5000/blockchain
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5002

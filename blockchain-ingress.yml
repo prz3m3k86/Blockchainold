@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blockchain-ingress
+spec:
+  rules:
+    - host: local.blockchain
+      http:
+        paths:
+          - path: /node1
+            pathType: Prefix
+            backend:
+              service:
+                name: blockchain-service-node1
+                port:
+                  number: 5001
+    - host: local.blockchain
+      http:
+        paths:
+          - path: /node2
+            pathType: Prefix
+            backend:
+              service:
+                name: blockchain-service-node2
+                port:
+                  number: 5002
+    - host: local.blockchain
+      http:
+        paths:
+          - path: /node3
+            pathType: Prefix
+            backend:
+              service:
+                name: blockchain-service-node3
+                port:
+                  number: 5003

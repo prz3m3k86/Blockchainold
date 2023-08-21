@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blockchain-client-wsei
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blockchain-client-wsei
+  template:
+    metadata:
+      labels:
+        app: blockchain-client-wsei
+    spec:
+      containers:
+      - name: blockchain-client
+        image: localhost:5000/blockchain-client
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8082

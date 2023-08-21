@@ -1,23 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blockchain-client
+  name: blockchain-client-przemek
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: blockchain-client
+      app: blockchain-client-przemek
   template:
     metadata:
       labels:
-        app: blockchain-client
+        app: blockchain-client-przemek
     spec:
       containers:
-      - name: Przemek
-        image: localhost:8081/Przemek
+      - name: blockchain-client
+        image: localhost:5000/blockchain-client
+        imagePullPolicy: Never
         ports:
         - containerPort: 8081
-      - name: WSEI
-        image: localhost:8082/WSEI
-        ports:
-        - containerPort: 8082

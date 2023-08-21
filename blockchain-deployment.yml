@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: blockchain
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: blockchain
@@ -13,15 +13,8 @@ spec:
         app: blockchain
     spec:
       containers:
-      - name: node1
-        image: localhost:5001/node1
+      - name: blockchain
+        image: localhost:5000/blockchain
+        imagePullPolicy: Never
         ports:
         - containerPort: 5001
-      - name: node2
-        image: localhost:5001/node2
-        ports:
-        - containerPort: 5002
-      - name: node3
-        image: localhost:5001/node3
-        ports:
-        - containerPort: 5003
